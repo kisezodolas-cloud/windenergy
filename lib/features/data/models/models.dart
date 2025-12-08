@@ -1,32 +1,32 @@
 import 'package:windenergy/features/domain/entities/entities.dart';
 
 class UtilisateurModel extends Utilisateur {
-
   const UtilisateurModel({
-      super.authId,
-      super.idUtilisateur,
-      super.email,
-      super.nom,
-      super.prenom
+    super.authId,
+    super.idUtilisateur,
+    super.email,
+    super.nom,
+    super.prenom,
   });
 
-  factory UtilisateurModel.fromJSON(Map<String, Object> json) {
-    final authId = json["authId"]! as String;
-    final idUtilisateur = json["idUtilisateur"]! as int;
-    final email = json["email"]! as String;
-    final nom = json["nom"] as String;
-    final prenom = json["prenom"] as String;
+  UtilisateurModel.fromJSON(Map<String, Object> json)
+    : super(
+        authId: json["authId"]! as String,
+        idUtilisateur: json["idUtilisateur"]! as int,
+        email: json["email"]! as String,
+        nom: json["nom"]! as String,
+        prenom: json["prenom"]! as String,
+      );
 
-    return UtilisateurModel(
-      authId: authId,
-      idUtilisateur: idUtilisateur,
-      email: email,
-      nom: nom,
-      prenom: prenom,
-    );
+  Map<String, Object> toJSON() {
+    var ret = <String, Object>{};
+    ret["authId"] = authId;
+    ret["idUtilisateur"] = idUtilisateur;
+    ret["email"] = email;
+    ret["nom"] = nom;
+    ret["prenom"] = prenom;
+    return ret;
   }
-
-  
 }
 
 class EolienneModel extends Eolienne {}
