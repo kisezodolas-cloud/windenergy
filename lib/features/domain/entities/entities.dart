@@ -28,9 +28,8 @@ class Eolienne extends Equatable {
   final String hashSecurite;
   final DateTime? tempsDerniereMesure;
   final bool actif;
-  
 
-  Eolienne({
+  const Eolienne({
     this.idUtilisateur = 0,
     this.numeroSerie = "",
     this.vitesseRotation = 0,

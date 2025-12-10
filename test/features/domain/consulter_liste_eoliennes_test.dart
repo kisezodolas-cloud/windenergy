@@ -2,7 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:windenergy/core/resultat/resultat.dart';
 import 'package:windenergy/features/domain/repositories/eolienne_repository.dart';
-import 'package:windenergy/features/domain/usecases/consulter_etat_eolienne.dart';
 import 'package:windenergy/features/domain/usecases/consulter_liste_eoliennes.dart';
 
 class MockEolienneRepository extends Mock implements EolienneRepository {}

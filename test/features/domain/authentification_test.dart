@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:windenergy/core/resultat/resultat.dart';
@@ -26,7 +24,7 @@ void main() {
       (_) async => Succes(true),
     ); // Definition du comportement simuler de EolienneRepository.authentifier
 
-    await authentifier(email,motDePasse);
+    await authentifier(email, motDePasse);
 
     verify(() => repository.authentifier(email, motDePasse));
   });
@@ -36,12 +34,14 @@ void main() {
     final nom = "";
     final prenom = "";
     final motDePasse = "";
-    when(() => repository.enregistrer(email,nom,prenom, motDePasse)).thenAnswer(
+    when(
+      () => repository.enregistrer(email, nom, prenom, motDePasse),
+    ).thenAnswer(
       (_) async => Succes(true),
     ); // Definition du comportement simuler de EolienneRepository.authentifier
 
-    await enregistrer(email,nom,prenom,motDePasse);
+    await enregistrer(email, nom, prenom, motDePasse);
 
-    verify(() => repository.enregistrer(email,nom,prenom, motDePasse));
+    verify(() => repository.enregistrer(email, nom, prenom, motDePasse));
   });
 }
